@@ -7,6 +7,7 @@ body {
 /*********************navigation********************/
 header {
   margin-top: 25px;
+  height: 50px;
 }
 
 .navbar {
@@ -76,6 +77,16 @@ input {
   margin: 15px 0;
 }
 
+.navbar ul li:hover {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar ul li:active {
+  color: #e6a562;
+  font-weight: 600;
+}
+
 .headerLogo {
   color: black;
   text-decoration: none;
@@ -95,19 +106,34 @@ input {
 /*********************Hero********************/
 
 .heroSection {
+  position: relative;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding-top: 20vh;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around;
+  align-items: end;
 }
+
+.backgroundImage {
+  position: absolute;
+  z-index: 0;
+  opacity: 17%;
+  width: 100%;
+  height: 100vh;
+  object-fit: contain;
+}
+
 .infoContainer {
-  margin: 20px;
   z-index: 1;
+  width: 50%;
 }
-.pictureContainer {
-  filter: grayscale(1);
+
+.infoContainer h1 {
+  font-size: 3em;
+  margin: 0;
+}
+.infoContainer p {
+  font-size: 1.5em;
 }
 
 .heroLine {
@@ -127,4 +153,120 @@ input {
   background-color: grey;
   margin: 7px;
   border-radius: 50px;
+}
+
+.pictureContainer {
+  filter: grayscale(1);
+  background-image: url("../img/gabriel.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+  background-position: center center;
+  height: 70vh;
+  width: 100%;
+}
+
+@media screen and (min-width: 1500px) {
+  .pictureContainer {
+    position: absolute;
+    margin-right: 30%;
+    width: 100%;
+    height: 100vh;
+    background-position: right;
+  }
+
+  .infoContainer {
+    margin-left: -30%;
+    width: 30%;
+  }
+
+  .heroSection {
+    height: 80vh;
+  }
+}
+
+/*********************prosjekter********************/
+
+.prosjektWrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.prosjekt-info h3 {
+  opacity: 60%;
+  font-weight: 400;
+}
+
+.prosjekter {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 30px 30px;
+  grid-template-areas:
+    ". ."
+    ". ";
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.prosjekt-item {
+  height: 50vh;
+  overflow: hidden;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.prosjekt-bilde {
+  width: 700px;
+  height: auto;
+}
+
+.prosjekt-navn {
+  position: absolute;
+  z-index: 1;
+  margin-left: 20px;
+  margin-top: 40px;
+}
+
+.prosjekt-navn h5 {
+  font-size: 1.5em;
+  font-weight: normal;
+  margin: 0;
+}
+
+.prosjekt-navn h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  width: 50%;
+}
+
+@media screen and (min-width: 1500px) {
+  .prosjekter {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr 1fr;
+    gap: 40px 40px;
+    padding-right: 0;
+    padding-left: 0;
+    max-width: 1440px;
+  }
+  .prosjekt-item {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .prosjekt-item {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .prosjekt-item {
+    max-width: 200px;
+  }
 }
