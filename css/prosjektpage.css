@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  font-family: "Barlow Condensed", sans-serif;
+}
+
+/*********************navigation********************/
+header {
+  margin-top: 25px;
+  height: 50px;
+}
+
+.navbar {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  clip-path: circle(25px at calc(100% - 45px) 45px);
+  transition: all 0.3s ease-in-out;
+}
+
+input {
+  display: none;
+}
+.button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 11;
+  text-align: center;
+  line-height: 50px;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
+#active:checked ~ .navbar {
+  clip-path: circle(75%);
+}
+
+#active:checked ~ .button {
+  color: black;
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+.navHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navHead a {
+  text-decoration: none;
+  color: #fff;
+}
+.navbar ul {
+  position: absolute;
+  text-align: center;
+  list-style-type: none;
+  -webkit-padding-start: 0;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.navbar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.navbar ul li {
+  margin: 15px 0;
+}
+
+.navbar ul li:hover {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar ul li:active {
+  color: #e6a562;
+  font-weight: 600;
+}
+
+.headerLogo {
+  color: black;
+  text-decoration: none;
+  font-size: 1.5em;
+  margin-left: 25px;
+  z-index: 100;
+  font-weight: bold;
+  position: fixed;
+}
+
+#active:checked ~ .headerLogo {
+  position: relative;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+/*********************prosjektdetailjer********************/
+
+.prosjekt-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prosjekt-info h2 {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+.prosjekt-info h5 {
+  font-weight: 500;
+  opacity: 50%;
+  font-size: 1.5em;
+}
+
+.prosjekt-bilder {
+  margin-bottom: 50px;
+}
+
+.prosjekt-bilder img {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+
+  width: 80%;
+  height: auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
